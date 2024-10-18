@@ -1,0 +1,38 @@
+
+button{
+    transition: all 1s;
+    margin-inline: 10px;
+    overflow: hidden;
+    position: relative;
+}
+button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+   right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(red,rgb(219, 188, 9),rgb(171, 69, 69),green);
+    transform: scaleX(0); /* Start with hidden line */
+    transform-origin: bottom;
+    transition: transform 2s linear; 
+}
+button::after{
+    content: '';
+    position: absolute;
+     left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(rgb(123, 111, 176),rgb(72, 208, 199),rgb(236, 222, 32),rgb(233, 89, 37));
+    transform: scaleX(0); /* Start with hidden line */
+    transform-origin: top;
+    transition: transform 2s linear; 
+}
+button:hover::after {
+    transform: scaleX(1); /* On hover, scale the line to full width */
+}
+button:hover::before {
+    transform: scaleX(1); /* On hover, scale the line to full width */
+}
